@@ -1,0 +1,5 @@
+Cron jobs run on system clock (IST, UTC+5:30). When user says "midnight Central Time", schedule at 05:00 UTC = `0 5 * * *`. Midnight CT (CDT, UTC-5) = 05:00 UTC.
+§
+Stock scanner setup: 8 AM silent scan (nse_stock_scanner.py --silent) saves cache to ~/.hermes/cache/stock_scan_cache.json. 9:05 AM premarket_pulse.py reads cache + fetches global indicators → delivers one combined report to Telegram. Nightly GitHub sync at 5 AM IST to dakshgodara2001/hermes-agent-data (private repo). Known scanner fixes needed: RSI >78 disqualifies momentum/swing tags; min fundamental score ≥6.0 for momentum tag; crude direction must penalize Energy stocks; IT stocks need tech score ≥6.5; flag high intraday range stocks.
+§
+Daksh's Karpathy-style combined research wiki lives at /Users/dakshgodara/wiki. It covers AI/LLMs and markets/investing research, with SCHEMA.md, index.md, log.md, raw/, entities/, concepts/, comparisons/, queries/, markets/, stocks/, sectors/, and theses/.

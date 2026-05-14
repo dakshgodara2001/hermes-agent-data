@@ -1,9 +1,10 @@
 ---
 name: systematic-debugging
-description: Use when encountering any bug, test failure, or unexpected behavior. 4-phase root cause investigation — NO fixes without understanding the problem first.
+description: "4-phase root cause debugging: understand bugs before fixing."
 version: 1.1.0
 author: Hermes Agent (adapted from obra/superpowers)
 license: MIT
+platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [debugging, troubleshooting, problem-solving, root-cause, investigation]
@@ -354,6 +355,18 @@ When fixing bugs:
 2. Debug systematically to find root cause
 3. Fix the root cause (GREEN)
 4. The test proves the fix and prevents regression
+
+## Post-Outcome Review for Scheduled Decision Systems
+
+When debugging a recurring analytics/recommendation system (market scanner, monitoring alert, ranking engine, daily briefing):
+
+1. Compare the recommendation/log output against the actual outcome after the event window closes.
+2. Separate wins, flats, and misses using explicit thresholds.
+3. Identify root causes per miss (e.g. overextension, sector macro conflict, weak technical confirmation, stale proxy data).
+4. Convert the lesson into a concrete rule or risk flag, not just a narrative note.
+5. Validate the updated script end-to-end before relying on the next scheduled run.
+
+Pitfall: do not tune only to the latest loser. Preserve broad framework stability; add guards for repeatable failure modes.
 
 ## Real-World Impact
 

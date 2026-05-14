@@ -1,9 +1,10 @@
 ---
 name: github-repo-management
-description: Clone, create, fork, configure, and manage GitHub repositories. Manage remotes, secrets, releases, and workflows. Works with gh CLI or falls back to git + GitHub REST API via curl.
+description: "Clone/create/fork repos; manage remotes, releases."
 version: 1.1.0
 author: Hermes Agent
 license: MIT
+platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [GitHub, Repositories, Git, Releases, Secrets, Configuration]
@@ -499,6 +500,10 @@ for g in json.load(sys.stdin):
     files = ', '.join(g['files'].keys())
     print(f\"  {g['id']}  {g['description'] or '(no desc)':40}  {files}\")"
 ```
+
+## Secret-Safe Scheduled Backups
+
+When a user asks to sync personal/agent data to GitHub while excluding secrets, use the pattern in `references/secret-safe-github-backups.md`. Create or reuse a private repo, copy only allowlisted content into a separate working tree, redact config files, maintain a strict `.gitignore`, and schedule the sync with explicit timezone handling.
 
 ## Quick Reference Table
 
