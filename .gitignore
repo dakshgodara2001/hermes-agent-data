@@ -1,0 +1,20 @@
+# Secrets & auth — NEVER commit these
+.env
+auth.json
+auth.lock
+*.pid
+state.db*
+pairing/
+gateway_state.json
+audio_cache/
+image_cache/
+models_dev_cache.json
+ollama_cloud_models_cache.json
+sessions/
+logs/
+sandboxes/
+cron/output/
+# Python/misc
+__pycache__/
+*.pyc
+.DS_Store
