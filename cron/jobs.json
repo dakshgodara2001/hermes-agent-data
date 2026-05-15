@@ -18,16 +18,16 @@
       "schedule_display": "0 5 * * *",
       "repeat": {
         "times": null,
-        "completed": 0
+        "completed": 1
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T05:30:19.011354+05:30",
-      "next_run_at": "2026-05-16T05:00:00+05:30",
-      "last_run_at": null,
-      "last_status": null,
+      "next_run_at": "2026-05-17T05:00:00+05:30",
+      "last_run_at": "2026-05-15T05:00:52.610064+05:30",
+      "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
@@ -56,15 +56,15 @@
       "schedule_display": "0 8 * * 1-5",
       "repeat": {
         "times": null,
-        "completed": 1
+        "completed": 2
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T06:29:30.435964+05:30",
-      "next_run_at": "2026-05-15T08:00:00+05:30",
-      "last_run_at": "2026-05-14T08:02:31.943804+05:30",
+      "next_run_at": "2026-05-18T08:00:00+05:30",
+      "last_run_at": "2026-05-15T08:02:01.209005+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -94,15 +94,15 @@
       "schedule_display": "5 9 * * 1-5",
       "repeat": {
         "times": null,
-        "completed": 1
+        "completed": 2
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T06:36:31.243693+05:30",
-      "next_run_at": "2026-05-15T09:05:00+05:30",
-      "last_run_at": "2026-05-14T09:06:14.550001+05:30",
+      "next_run_at": "2026-05-18T09:05:00+05:30",
+      "last_run_at": "2026-05-15T09:05:52.002570+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -115,5 +115,5 @@
       }
     }
   ],
-  "updated_at": "2026-05-15T05:00:23.755987+05:30"
+  "updated_at": "2026-05-16T05:00:12.924421+05:30"
 }
