@@ -95,12 +95,53 @@ spotify_library({"kind": "tracks", "action": "save", "uris": ["spotify:track:...
 spotify_library({"kind": "albums", "action": "list", "limit": 50})
 ```
 
+### "Search my liked songs and recommend similar songs"
+Use the user's saved tracks as taste signals, but keep outputs small — `limit: 50` can dump huge album objects and flood context. Start with `limit: 10` or `20` and infer recent taste from track names/artists. If you need more breadth, page another small batch with `offset` rather than one large call.
+
+Pattern:
+```
+spotify_library({"kind": "tracks", "action": "list", "limit": 10, "market": "IN"})
+→ infer dominant artists/genres/moods from recent liked tracks
+spotify_search({"query": "<candidate recommendation>", "types": ["track"], "limit": 1, "market": "IN"})
+→ present concise recommendations and offer to play/queue
+```
+
+Guidance:
+- Do not claim recommendations are from Spotify's official recommendation API unless using such an endpoint; say they are based on the user's liked songs.
+- For a user with many recent hip-hop/trap likes, prioritize adjacent artists, producers, and features (e.g. Metro/Future/Travis/Don Toliver/21 Savage connections) instead of generic popular songs.
+- If the user says "not random" or similar, explicitly anchor each recommendation to observed liked artists/tracks.
+- Offer clear playback commands: "play the first one" / "queue all".
+
 ### "Transfer playback to my <device>"
 ```
 spotify_devices({"action": "list"})
 → pick the device_id by matching name/type
 spotify_devices({"action": "transfer", "device_id": "<id>", "play": true})
 ```
+
+If playback was accidentally routed to the wrong device, first pause/stop the current playback, list devices, transfer to the requested device with `play: true`, then replay the requested URI on that `device_id`. In the final response, name the device you selected so the user can verify it.
+
+### "Enhance my playlists with similar songs"
+For bulk playlist curation, avoid dumping random popular songs or flooding each playlist. Prefer a conservative, high-confidence pass first.
+
+Pattern:
+```
+spotify_playlists({"action": "list", "limit": 50, "market": "IN"})
+→ get playlist names, IDs, and track counts
+spotify_playlists({"action": "get", "playlist_id": "<id>", "limit": 30, "market": "IN"})
+→ inspect representative tracks for vibe/artists
+spotify_search({"query": "<candidate track>", "types": ["track"], "limit": 1, "market": "IN"})
+spotify_playlists({"action": "add_items", "playlist_id": "<id>", "uris": ["spotify:track:..."]})
+```
+
+Guidance:
+- Add 1-3 strong matches per playlist by default unless the user asks for more; say you kept it conservative to avoid clutter.
+- Anchor choices to each playlist's current artists, mood, and title. For very small playlists, use the track(s) inside plus the playlist name as the vibe signal.
+- Batch independent `get`, `search`, and `add_items` calls in parallel when possible, but inspect enough playlist content before mutating.
+- In the final response, list playlist → added track(s). Do not over-explain every pick unless asked.
+
+### Motivation/background music for work/startup mode
+When the user asks for music for building, coding, startup grind, focus, gym, or motivation, choose a track that matches their observed taste rather than generic motivational songs. For this user, dark/confident hip-hop/trap works better than random pop: Travis Scott, Future, Metro Boomin, Drake, Don Toliver, 21 Savage, and adjacent artists. Play one strong pick immediately when the intent is clear, then offer a short queue in the same lane.
 
 ## Critical failure modes
 
