@@ -505,6 +505,10 @@ for g in json.load(sys.stdin):
 
 When a user asks to sync personal/agent data to GitHub while excluding secrets, use the pattern in `references/secret-safe-github-backups.md`. Create or reuse a private repo, copy only allowlisted content into a separate working tree, redact config files, maintain a strict `.gitignore`, and schedule the sync with explicit timezone handling.
 
+## Secret-Safe Push of Existing Apps
+
+When a user asks to create a private repo and push an existing website/app “except keys and tokens,” use `references/secret-safe-project-push.md`. Tighten `.gitignore` before staging, exclude local deployment metadata such as `.vercel/`, replace committed frontend keys/tokens with server-side environment-variable routes where appropriate, commit only `.env.example` placeholders, then verify the remote repo is private and scan committed blobs for token patterns.
+
 ## Quick Reference Table
 
 | Action | gh | git + curl |

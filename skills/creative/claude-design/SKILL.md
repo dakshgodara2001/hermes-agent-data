@@ -319,6 +319,18 @@ For interactive prototypes:
 
 If the prototype is meant to model a product flow, design the flow, not just the first screen.
 
+### Landing page waitlists and Supabase
+
+When a landing page includes a waitlist form:
+
+- Make the form work, even in the first artifact. A localStorage + CSV backup is acceptable for a standalone prototype.
+- Keep public-facing copy polished. Avoid visible internal caveats like “prototype stores in localStorage” unless the user explicitly wants implementation notes on the page.
+- If the user asks to connect Supabase, wire the frontend REST call and also provide the required table/RLS SQL. The anon key is safe in browser code only when Row Level Security policies are correct; never embed a service role key.
+- Use a unique `email` column and Supabase upsert (`on_conflict=email` plus `Prefer: resolution=merge-duplicates,return=minimal`) when duplicate signups should update rather than fail.
+- Verify with browser console plus a REST probe. If Supabase returns `PGRST205`, the frontend is wired but the table is missing/schema cache has not found it; give the user exact SQL to run.
+
+See `references/supabase-waitlist-landing-pages.md` for a ready SQL/policy pattern and verification checklist.
+
 ## Variation Rules
 
 When exploring, default to at least three options:
@@ -370,6 +382,10 @@ Persist tweak values with localStorage when helpful.
 Do not add filler content.
 
 Every element must earn its place.
+
+### Regulated / trading product landing pages
+
+For trading, investing, crypto, or financial-decision products, design the page around responsibility and process rather than hype. Avoid guaranteed-return language, fake performance metrics, and "buy/sell tips" framing. Prefer decision-support, education, risk management, journaling, sandbox/practice, and post-market accountability language. Include an appropriate visible disclaimer when the artifact may be public-facing. For a worked landing-page pattern, see `references/agentic-trading-landing.md`. For one-page research-synthesis posters/banners based on agentic-trading papers, see `references/agentic-trading-research-poster.md`.
 
 Avoid:
 
@@ -530,6 +546,14 @@ It is not acceptable to clone proprietary layouts, copy exact branded surfaces, 
 
 When using references, transform posture and principles into an original design.
 
+## Waitlist / Lead-Capture Forms
+
+When designing landing pages with waitlists, do not leave the form as a fake visual element if the user asks to connect it. For static HTML prototypes, a Supabase REST-backed form is a good MVP path: use only the anon public key, create a dedicated `public.waitlist` table, enable RLS, add an anon insert policy, and avoid embedding service-role credentials. Prefer simple insert over upsert unless update policies are deliberately configured. See `references/supabase-waitlist-forms.md` for a known-good table, frontend request pattern, pitfalls, and verification steps.
+
+## Analytics for Static Landing Pages
+
+For deployed landing pages, instrument the funnel before calling the MVP finished: page views, primary CTA clicks, form submit attempts, successful signups, duplicate emails, and signup failures. On Vercel static pages, add `/_vercel/insights/script.js`, wrap custom events in a defensive helper, and never send PII such as names/emails in event payloads. Re-test the live production URL after instrumentation because local analytics behavior is not authoritative. See `references/static-landing-analytics.md` for the Vercel Insights pattern, event names, and verification checklist.
+
 ## Verification
 
 Before final response, verify as much as the environment allows.
@@ -547,6 +571,16 @@ Better:
 - test key interactions
 - test light/dark or variants if present
 - test responsive breakpoints if relevant
+
+For landing pages with forms/backends, also verify the integration end-to-end:
+
+- create the backend table/policy or provide exact SQL for the user to run
+- test direct API insertion where possible
+- test the browser form on the local page
+- after deployment, test the public URL and confirm the form writes successfully
+- handle duplicate-email or validation errors with user-friendly product copy, not raw provider errors
+
+See `references/static-landing-waitlist.md` for the Supabase + Vercel waitlist pattern and RLS/upsert pitfall.
 
 If verification is limited by environment, say exactly what was and was not verified.
 
@@ -589,3 +623,4 @@ You are running in CLI/API mode, not hosted Claude Design. Ignore references to 
 - Do not under-ask for high-fidelity work with no brand context.
 - Do not produce generic SaaS layouts and call them designed.
 - Do not claim browser verification unless it actually happened.
+- Browser-tool previews are internal to the agent; the user may not see them on their Mac. For local HTML/SVG artifacts, if the user asks to “open it” or says they cannot see it, run the OS opener (`open /absolute/path/to/file` on macOS) and include the exact path.

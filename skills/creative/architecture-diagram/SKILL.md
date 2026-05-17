@@ -43,6 +43,23 @@ Based on [Cocoon AI's architecture-diagram-generator](https://github.com/Cocoon-
 3. Save with `write_file` to a `.html` file (e.g. `~/architecture-diagram.html`)
 4. User opens in any browser — works offline, no dependencies
 
+### Mermaid.ai / Mermaid Source Workflow
+
+If the user specifically asks for a Mermaid diagram or provides a Mermaid.ai URL:
+
+1. Try opening the URL, but expect Mermaid.ai may require login and may not be directly editable from the agent session.
+2. Produce a standalone `.mmd` file containing the complete Mermaid source.
+3. If Mermaid CLI is not installed, render with a one-shot command rather than requiring global setup:
+   ```bash
+   npx -y @mermaid-js/mermaid-cli -i ./diagram.mmd -o ./diagram.svg
+   ```
+4. On macOS, copy the Mermaid source to the user's clipboard and open the rendered preview:
+   ```bash
+   pbcopy < ./diagram.mmd
+   open ./diagram.svg
+   ```
+5. Tell the user the Mermaid.ai editor may need manual paste if login blocks direct editing, and provide both the `.mmd` source path and rendered `.svg` path.
+
 ### Output Location
 
 Save diagrams to a user-specified path, or default to the current working directory:
