@@ -26,6 +26,7 @@ Use this skill when building or modifying a static landing page that collects ea
 3. Treat analytics as product telemetry, not surveillance. Track CTA/form states and non-sensitive metadata; do not send free-text answers, emails, names, or financial details to analytics.
 4. For fintech/trading products, avoid profit-hype. Include education/research/decision-support disclaimers and avoid claiming personalized financial advice.
 5. Verify both local behavior and deployed production behavior before declaring done.
+6. For naming/rebrand passes, update the full conversion surface, not just the hero: `<title>`, meta description, nav labels, hero, preview cards, waitlist success/duplicate text, CSV filenames, localStorage keys, disclaimers, footer, and any analytics/download labels.
 
 ## Standard workflow
 
@@ -61,7 +62,13 @@ Use this skill when building or modifying a static landing page that collects ea
 7. Deploy and verify production.
    - Deploy with the project’s established deployment tool, often `npx vercel --prod --yes`.
    - Open the canonical production URL, not only the preview URL.
+   - If production still appears stale after a successful alias, also verify with a cache-busted URL such as `?v=<commit-or-slug>` before assuming the deployment failed.
    - Confirm new UI exists, analytics script loads if relevant, form submission succeeds, and no console errors appear.
+
+8. Commit and push if the project is Git-backed and the user asked to update the live website.
+   - Check `git status`/remote first.
+   - Commit only the intended files.
+   - Push to the deployment branch and trigger the production deploy if auto-deploy has not picked it up.
 
 ## Supabase/PostgREST checklist
 
@@ -82,3 +89,4 @@ Use this skill when building or modifying a static landing page that collects ea
 ## References
 
 - `references/tradepilot-waitlist-onboarding.md` — concrete example of adding a Supabase-backed onboarding question to a static trading landing page.
+- `references/rebrand-to-arbiter.md` — concrete example of a full static landing-page rebrand, including product metaphor, copy surfaces, localStorage/CSV names, deploy, and cache-busted verification.

@@ -32,14 +32,21 @@ Prefer a **two-stage workflow** for markets with a defined open:
 
 2. **Pre-market pulse**
    - Read the cached picks.
-   - Fetch global/pre-open indicators.
+   - Fetch global/pre-market indicators.
    - Adjust conviction for broad market bias and sector-specific cues.
    - Send one concise actionable briefing shortly before market open.
 
-3. **Post-market calibration**
+3. **Live decision-card paper test**
+   - Before treating picks as actionable, verify the scanner cache is fresh for the current trading day.
+   - If stale, rerun the silent scanner first; do not test against old picks.
+   - Convert top picks into structured decision-card payloads with market regime, candidate evidence, risk gates, invalidation/stop fields, and non-advice disclaimer.
+   - A risk-off market regime should be treated as a valid test outcome: the framework may correctly output WAIT for all fresh longs. Do not force BUY candidates just to make the test look active.
+   - Save the generated card set to a machine-readable cache so post-market review can compare decisions against actual close/intraday outcomes.
+
+4. **Post-market calibration**
    - Compare recommendations against actual outcomes after close.
    - Identify which factors worked/failed.
-   - Patch the scanner logic immediately.
+   - Patch the scanner or decision-card logic immediately.
 
 ## Scoring Framework
 
@@ -69,7 +76,7 @@ Always include a non-advice disclaimer for market outputs.
 
 After close, compute:
 
-- Scan price → close return
+- Scan/test price → close return
 - Open → close return
 - Intraday high/low excursion
 - Winners > +1%
@@ -77,6 +84,8 @@ After close, compute:
 - Losers < -0.5%
 - Sector hit rate
 - Hit rate by label: Momentum, Swing, Long-term
+- For decision-card tests: whether each decision (`READY_TO_PLAN`, `WATCH`, `WAIT`) was directionally justified by the day’s action
+- For all-`WAIT` risk-off days: whether WAIT avoided weak longs, or whether any exceptional setup should have bypassed the market-regime block
 
 Then state:
 
@@ -84,7 +93,7 @@ Then state:
 2. What failed
 3. Root causes
 4. Specific rule changes
-5. Whether the automation was patched
+5. Whether the scanner/decision-card automation was patched
 
 ## Pitfalls
 
@@ -93,7 +102,11 @@ Then state:
 - Do not call a setup Low risk if recent range/volatility is wide.
 - Do not recommend sector names from macro cues alone; require stock-level confirmation.
 - Clean stale tickers and NaN indicator values so scheduled reports stay readable.
+- Do not use stale scanner caches for live tests. Check `generated_at` first and rerun the scanner if it is not from the current trading day/session.
+- Do not treat an all-`WAIT` decision-card output as a failed test on risk-off days. It may be the correct behavior; verify after close.
+- When a project-specific market script already has dependencies/runtime working, run live-data probes with that same runtime instead of assuming the generic sandbox has every finance dependency installed.
 
 ## References
 
 - `references/nse-bse-premarket-scanner.md` — NSE/BSE-specific implementation notes and lessons from Daksh's scanner.
+- `references/tradepilot-decision-card-live-test.md` — pattern for live paper-testing Decision Card engines against real market sessions.

@@ -18,6 +18,7 @@ Use this skill any time a .pptx file is involved in any way — as input, output
 | Read/analyze content | `python -m markitdown presentation.pptx` |
 | Edit or create from template | Read [editing.md](editing.md) |
 | Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |
+| Beautiful PDF deck without a template | Build self-contained HTML slides and export with Playwright; see `references/html-pdf-pitch-decks.md` |
 
 ---
 
@@ -140,6 +141,12 @@ Choose colors that match your topic — don't default to generic blue. Use these
 - **Don't forget text box padding** — when aligning lines or shapes with text edges, set `margin: 0` on the text box or offset the shape to account for padding
 - **Don't use low-contrast elements** — icons AND text need strong contrast against the background; avoid light text on light backgrounds or dark text on dark backgrounds
 - **NEVER use accent lines under titles** — these are a hallmark of AI-generated slides; use whitespace or background color instead
+
+---
+
+## PDF Decks from HTML
+
+When the user asks for a beautiful pitch deck and specifically wants a PDF, and no .pptx template is required, a self-contained HTML deck can be faster and more visually flexible than generating PPTX directly. Use one fixed-size `<section class="slide">` per slide, export with Playwright/Chromium using `print_background=True`, then screenshot every slide and inspect a contact sheet before delivery. Full workflow and reusable snippets: `references/html-pdf-pitch-decks.md`.
 
 ---
 

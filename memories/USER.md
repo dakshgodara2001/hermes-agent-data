@@ -6,4 +6,4 @@ Daksh prefers the NSE/BSE morning stock scanner to be evaluated against actual m
 §
 Daksh's Spotify taste recently skews toward dark/melodic trap and hip-hop: Travis Scott, Don Toliver, Future, Metro Boomin, 21 Savage, Lil Yachty/Nemzzz; he dislikes random recommendations and prefers recs anchored to his liked songs/artists.
 §
-Daksh is building in the startup space, especially TradePilot: an AI trading copilot/sandbox for Indian retail trader learning, risk management, feedback, and accountability. He likes positioning that is realistic and human, e.g. “Not tips. A trading framework,” not over-polished or profit-hype.
+Daksh is building Arbiter, an agentic trading copilot/sandbox for Indian retail traders focused on decision discipline, risk, feedback, and accountability. Position it as “put every trade on trial,” not tips/profit-hype; accelerator answers should foreground the product thesis plus concrete wins/track record.

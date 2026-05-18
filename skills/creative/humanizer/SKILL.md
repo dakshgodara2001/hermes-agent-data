@@ -24,11 +24,20 @@ Identify and remove signs of AI-generated text to make writing sound natural and
 Load this skill whenever the user asks to:
 - "humanize", "de-AI", "de-slop", or "un-ChatGPT" a piece of text
 - rewrite something so it doesn't sound like it was written by an LLM
-- edit a draft (blog post, essay, PR description, docs, memo, email, tweet, resume bullet) to sound more natural
+- edit a draft (blog post, essay, PR description, docs, memo, email, tweet, resume bullet, accelerator/startup application answer) to sound more natural
 - match their voice in writing they're producing
 - review text for AI tells before publishing
 
 Also apply this skill to **your own** output when writing user-facing prose — release notes, PR descriptions, documentation, long-form explanations, summaries. Hermes's baseline voice already strips most of these, but a focused pass catches what slips through.
+
+### Accelerator / startup application answers for Daksh
+
+When helping Daksh with accelerator or speedrun-style applications:
+- Keep the answer pointed at the actual startup direction if he states one. For the current startup direction, center the agentic trading / disciplined trader decision-system thesis rather than writing a generic fintech PM profile.
+- If the form asks for track record, include a clear **wins angle**: shipped products, users/revenue/operations touched, team/system scale, competition placements, or concrete outcomes. Do not stop at insight or motivation.
+- Be honest about weak spots instead of polishing them away. For trading products, avoid claiming guaranteed alpha or "AI stock tips"; frame the product as decision discipline, risk checks, journaling, feedback loops, and trader behavior change.
+- Respect hard word limits. Draft within the limit, count words with a tool, and give the user a paste-ready answer first.
+- Prefer natural, founder-like prose over resume buzzwords. Strong pattern: `relevant role + concrete wins + domain insight + why this product follows from that background`.
 
 ## How to use it in Hermes
 

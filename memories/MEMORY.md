@@ -4,4 +4,4 @@ Stock scanner setup: 8 AM silent scan (nse_stock_scanner.py --silent) saves cach
 §
 Daksh's Karpathy-style combined research wiki lives at /Users/dakshgodara/wiki. It covers AI/LLMs and markets/investing research, with SCHEMA.md, index.md, log.md, raw/, entities/, concepts/, comparisons/, queries/, markets/, stocks/, sectors/, and theses/.
 §
-TradePilot / agentic trading landing project lives locally at /Users/dakshgodara/agentic-trading-landing and has private GitHub repo dakshgodara2001/agentic-trading-landing.
+Arbiter (formerly TradePilot) agentic trading landing project lives locally at /Users/dakshgodara/agentic-trading-landing and has private GitHub repo dakshgodara2001/agentic-trading-landing. Product positioning: “put every trade on trial,” an agentic decision/risk system for Indian retail traders, not tips/profit-hype.
