@@ -1,11 +1,10 @@
 ---
 name: nse-bse-morning-scanner
 description: >
-  Daily NSE/BSE stock intelligence system: a silent 8 AM scanner builds a conviction-ranked
-  stock pick cache, and a 9:05 AM pre-market pulse merges those picks with live global
-  indicators (US markets, Asian markets, crude, gold, USD/INR, VIX, FII proxy) into one
-  combined briefing delivered before the bell. Use this skill when setting up or maintaining
-  the morning stock scan cron system for Indian markets.
+  Daily Nifty 50 / Bank Nifty intelligence system: a silent 8 AM scanner builds a conviction-ranked
+  cache from only Nifty 50 + Bank Nifty constituent stocks, and a 9:05 AM pre-market pulse delivers
+  focused commentary on Nifty 50, Bank Nifty, and qualifying underlying stocks before the bell.
+  Use this skill when setting up or maintaining the morning index-focused stock scan cron system for Indian markets.
 version: 1.0.0
 author: Hermes Agent
 tags: [stocks, NSE, BSE, India, markets, trading, cron, scanner, pre-market]
@@ -13,7 +12,7 @@ tags: [stocks, NSE, BSE, India, markets, trading, cron, scanner, pre-market]
 
 # NSE/BSE Morning Scanner
 
-A two-stage daily market intelligence pipeline for Indian equities.
+A two-stage daily market intelligence pipeline focused on Nifty 50, Bank Nifty, and their underlying constituent stocks.
 
 ## Architecture
 
@@ -22,10 +21,7 @@ A two-stage daily market intelligence pipeline for Indian equities.
 9:05 AM  →  premarket_pulse.py             →  combined report → Telegram
 ```
 
-**Key design principle:** The 8 AM job runs silently and saves results to
-`~/.hermes/cache/stock_scan_cache.json`. The 9:05 AM job reads that cache,
-fetches fresh global indicators, adjusts conviction scores based on global bias,
-and delivers ONE power briefing before the 9:15 AM market open.
+**Output rule:** The delivered 9:05 AM message should contain only Nifty 50 commentary, Bank Nifty commentary, and qualifying underlying constituent stocks. Global indicators may be fetched internally for bias scoring, but should not be printed as standalone US/Asia/commodity sections unless the user asks for them.
 
 ---
 
@@ -33,8 +29,8 @@ and delivers ONE power briefing before the 9:15 AM market open.
 
 | File | Purpose |
 |------|---------|
-| `~/.hermes/bin/nse_stock_scanner.py` | Stock screener — scores ~100 NSE stocks |
-| `~/.hermes/bin/premarket_pulse.py` | Pre-market pulse — global indicators + cache merge |
+| `~/.hermes/bin/nse_stock_scanner.py` | Stock screener — scores only Nifty 50 + Bank Nifty constituents |
+| `~/.hermes/bin/premarket_pulse.py` | Pre-market pulse — Nifty 50 + Bank Nifty commentary + filtered constituent watchlist |
 | `~/.hermes/cache/stock_scan_cache.json` | Ephemeral cache shared between the two scripts |
 
 ---
@@ -84,6 +80,23 @@ Weighted composite score across 4 pillars:
 - Pulse-side global adjustment must penalize Energy picks when crude is falling meaningfully.
 
 See `references/post-market-review-loop.md` for the outcome-review workflow and the May 14 lessons that produced these guards.
+
+---
+
+## Intraday Index Chart Review
+
+When the user asks how Nifty 50 / Bank Nifty are performing now, or asks for a chart-based strategy, do not rely on the morning pulse alone. Fetch fresh intraday data and derive actionable levels:
+
+1. Use yfinance 5-minute data for `^NSEI`, `^NSEBANK`, and `^INDIAVIX`.
+2. Compute and report: LTP, % change vs previous close, day high/low, 15-minute opening range high/low, 5-minute EMA20/EMA50, 5-minute RSI, and whether price is above/below those EMAs.
+3. For strategy, translate levels into conditional triggers, not predictions:
+   - Long only after reclaim/sustain above opening-range high or key reclaim zone.
+   - Short only after breakdown or failed pullback below opening-range low / day low.
+   - If price is between triggers, explicitly say “no fresh directional trade / avoid chop.”
+4. Cross-check Nifty with Bank Nifty. If Bank Nifty is below its opening range or EMAs while Nifty is holding up, label the setup as weak/mixed and avoid aggressive longs.
+5. Keep the output focused on Nifty 50, Bank Nifty, India VIX, and current watchlist stocks; avoid broad unrelated market commentary unless the user asks.
+
+See `references/intraday-index-strategy-and-events.md` for the exact probe pattern and event-check workflow used in the May 21 session.
 
 ---
 
@@ -151,6 +164,9 @@ Scale is 1–10. Update seasonally or when macro regime shifts.
 
 ## Pitfalls
 
+- **Google News RSS fallback:** If `web_search` is unavailable or quota-limited, use Google News RSS directly via `requests` + XML parsing for current market-moving headlines.
+- **NSE event calendar:** For earnings/board-meeting schedules, call `https://www.nseindia.com/api/event-calendar` with browser-like headers and an initial cookie request to `https://www.nseindia.com`, then filter by date.
+- **Intraday strategy discipline:** For chart-reading requests, fetch live 5-minute data and give conditional levels. Do not convert a morning bias into a fresh intraday recommendation without checking opening range, EMAs, RSI, and Bank Nifty confirmation.
 - **Cache staleness:** `premarket_pulse.py` rejects cache older than 4 hours.
   If the 8 AM job fails, the pulse will show a warning instead of picks.
 - **yfinance rate limits:** scanning 100 stocks takes ~2–3 minutes. Don't reduce

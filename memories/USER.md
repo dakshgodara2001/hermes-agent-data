@@ -1,4 +1,4 @@
-Daksh actively trades NSE/BSE (Indian stock market). Interested in swing trades, momentum trades, and long-term holds. Uses a multi-factor morning scan system (fundamentals + technicals + sector + sentiment). Wants pre-market global cues (Gift Nifty, US, Asia, crude, gold, forex, FII/DII proxy) integrated with stock picks before the 9:15 AM market open.
+Daksh actively trades NSE/BSE. Interested in swing, momentum, and long-term holds. His daily pre-market cron should focus only on Nifty 50, Bank Nifty, and their underlying constituents, with index commentary plus filtered stock watchlist before 9:15 AM.
 §
 Daksh does post-market reviews — he compares what the scanner suggested vs. what actually happened intraday, and expects honest analysis of what worked, what didn't, and root causes. He wants fixes applied immediately after the review, not just noted.
 §

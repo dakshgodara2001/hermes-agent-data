@@ -393,6 +393,16 @@ When ingesting multiple sources at once, batch the updates:
 5. Update index.md once at the end
 6. Write a single log entry covering the batch
 
+### Deep Research Projects
+
+When a user asks for a broad, source-heavy research project that should become durable wiki knowledge, follow `references/deep-research-projects.md`.
+
+Key additions:
+- Break the project into source classes: official/primary, industry/player, news/blog/social, academic papers, synthesis, opportunities, verification.
+- If broad research subagents time out, do not stop; switch to scripted/batched search and extraction grouped by source class.
+- Label confidence by source type: official/regulatory facts, industry/news claims, and anecdotal social/forum signals should not be blended.
+- For “cracks/opportunities” requests, map each system block to dependencies, failure modes, startup wedge, score, and AI leverage.
+
 ### Archiving
 
 When content is fully superseded or the domain scope changes:
