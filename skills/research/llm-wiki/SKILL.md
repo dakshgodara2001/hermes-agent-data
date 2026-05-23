@@ -430,6 +430,8 @@ cd "$WIKI" && WIKI_PATH="$WIKI" python3 wiki_server.py
 
 Use a tracked background process for the server and tell the user the URL plus how to stop it. This is useful for quick browsing; use Obsidian for full graph/backlink workflows.
 
+**Screenshot / visual preview workflow:** When the user asks to “show me how the wiki looks” or asks for a screenshot of a specific wiki page, start/reuse the local viewer, navigate with the query parameter form `http://localhost:8765/?page=<relative/path.md>` (not a raw path like `/queries/foo.md`), then use browser screenshot/vision tooling and return the resulting `MEDIA:<screenshot_path>`. If the page is only visible as a link in the index, inspect/copy the link target or use the `?page=` URL directly; stale browser element refs often fail after navigation. Mention the page URL and the process/session id only if useful for stopping the viewer later.
+
 ### Obsidian Integration
 
 The wiki directory works as an Obsidian vault out of the box:
