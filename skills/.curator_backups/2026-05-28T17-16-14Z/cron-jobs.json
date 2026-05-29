@@ -3,13 +3,13 @@
     {
       "id": "93f4f743729b",
       "name": "Nightly GitHub Sync",
-      "prompt": "Run the nightly Hermes data sync to GitHub. Deliver the script output.",
+      "prompt": "Run the nightly Hermes data sync to GitHub by executing this shell script: bash ~/.hermes/bin/nightly-github-sync.sh\n\nThe script will:\n1. Sync all skills from ~/.hermes/skills/\n2. Sync cron job definitions (JSON files only, not output)\n3. Sync memories from ~/.hermes/memories/\n4. Sync config.yaml with secrets stripped\n5. Sync SOUL.md\n6. Commit and push to git@github.com:dakshgodara2001/hermes-agent-data.git\n\nAfter the script runs, report back with:\n- How many files changed\n- Whether the push succeeded\n- Any errors encountered\n\nKeep the response brief.",
       "skills": [],
       "skill": null,
       "model": null,
       "provider": null,
       "base_url": null,
-      "script": "run_nightly_github_sync.sh",
+      "script": null,
       "schedule": {
         "kind": "cron",
         "expr": "0 5 * * *",
@@ -18,15 +18,15 @@
       "schedule_display": "0 5 * * *",
       "repeat": {
         "times": null,
-        "completed": 12
+        "completed": 11
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T05:30:19.011354+05:30",
-      "next_run_at": "2026-05-30T05:00:00+05:30",
-      "last_run_at": "2026-05-29T05:00:43.585383+05:30",
+      "next_run_at": "2026-05-29T05:00:00+05:30",
+      "last_run_at": "2026-05-28T05:01:02.523893+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: 'NoneType' object is not iterable",
       "last_delivery_error": null,
@@ -36,19 +36,18 @@
         "chat_id": "1205249019",
         "chat_name": "Daksh",
         "thread_id": null
-      },
-      "no_agent": true
+      }
     },
     {
       "id": "151efc4b7b39",
       "name": "Morning NSE/BSE Stock Scanner",
-      "prompt": "Run the Nifty 50 / Bank Nifty stock scanner silently (cache only, no report). Script writes ~/.hermes/cache/stock_scan_cache.json.",
+      "prompt": "Run the Nifty 50 / Bank Nifty stock scanner silently (cache only, no report):\n\ncd /Users/dakshgodara/.hermes/bin && python3 nse_stock_scanner.py --silent 2>/dev/null\n\nThis scans only Nifty 50 + Bank Nifty underlying stocks and caches the qualifying picks to ~/.hermes/cache/stock_scan_cache.json for the 9:05 AM pre-market pulse. Do not deliver anything \u2014 just confirm the cache was saved.",
       "skills": [],
       "skill": null,
       "model": null,
       "provider": null,
       "base_url": null,
-      "script": "run_nse_stock_scanner.sh",
+      "script": null,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * 1-5",
@@ -57,15 +56,15 @@
       "schedule_display": "0 8 * * 1-5",
       "repeat": {
         "times": null,
-        "completed": 9
+        "completed": 7
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T06:29:30.435964+05:30",
-      "next_run_at": "2026-06-01T08:00:00+05:30",
-      "last_run_at": "2026-05-29T13:34:56.154471+05:30",
+      "next_run_at": "2026-05-29T08:00:00+05:30",
+      "last_run_at": "2026-05-25T08:03:34.638843+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -75,19 +74,18 @@
         "chat_id": "1205249019",
         "chat_name": "Daksh",
         "thread_id": null
-      },
-      "no_agent": true
+      }
     },
     {
       "id": "7c84d4de7a1d",
       "name": "Pre-Market Pulse (9:05 AM)",
-      "prompt": "Run the Nifty 50 / Bank Nifty pre-market commentary report. Deliver the script output exactly as produced.",
+      "prompt": "Run the Nifty 50 / Bank Nifty pre-market commentary report by executing:\n\ncd /Users/dakshgodara/.hermes/bin && python3 premarket_pulse.py 2>/dev/null\n\nTake the EXACT output from the script and send it as your response. Do not add commentary, do not truncate, do not reformat \u2014 relay the full output as-is. The report must stay focused only on Nifty 50, Bank Nifty, and their underlying stocks. If the script fails or the cache is missing, report the error briefly.",
       "skills": [],
       "skill": null,
       "model": null,
       "provider": null,
       "base_url": null,
-      "script": "run_premarket_pulse.sh",
+      "script": null,
       "schedule": {
         "kind": "cron",
         "expr": "5 9 * * 1-5",
@@ -96,15 +94,15 @@
       "schedule_display": "5 9 * * 1-5",
       "repeat": {
         "times": null,
-        "completed": 10
+        "completed": 9
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T06:36:31.243693+05:30",
-      "next_run_at": "2026-06-01T09:05:00+05:30",
-      "last_run_at": "2026-05-29T09:05:10.914828+05:30",
+      "next_run_at": "2026-05-29T09:05:00+05:30",
+      "last_run_at": "2026-05-27T10:35:03.600549+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: 'NoneType' object is not iterable",
       "last_delivery_error": null,
@@ -114,9 +112,8 @@
         "chat_id": "1205249019",
         "chat_name": "Daksh",
         "thread_id": null
-      },
-      "no_agent": true
+      }
     }
   ],
-  "updated_at": "2026-05-29T13:55:56.541485+05:30"
+  "updated_at": "2026-05-28T12:23:42.996944+05:30"
 }
