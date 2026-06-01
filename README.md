@@ -2,7 +2,7 @@
 
 Automated nightly backup of Hermes agent configuration and data.
 
-**Last synced:** 2026-06-01 05:00 IST
+**Last synced:** 2026-06-02 05:00 IST
 
 ## Contents
 

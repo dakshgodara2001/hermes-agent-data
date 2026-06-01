@@ -75,7 +75,29 @@ Branch naming conventions:
 - `docs/description` — documentation
 - `ci/description` — CI/CD changes
 
+## Preview-before-push workflow
+
+When the user explicitly asks to see local changes before syncing/pushing to GitHub:
+
+1. Inspect `git status --short --branch` and remotes.
+2. Create a descriptive feature branch before editing.
+3. Make the requested changes locally.
+4. Run the relevant verification/build checks.
+5. Serve or otherwise preview the artifact locally and report the local preview URL/path.
+6. Stop before `git commit`/`git push` unless the user approves. Preserve the branch and working tree so the user can request changes.
+
+This is especially important for portfolio/static-site work where visual approval matters.
+
 ## 2. Making Commits
+
+Before committing user-facing website/UI work, especially when the user asked to “show me before pushing”:
+
+1. Make changes on a branch, not directly on the deployment branch.
+2. Keep diffs scoped to approved changes; avoid bundling extra redesign/copy edits.
+3. Serve or otherwise preview the artifact locally.
+4. Verify with browser/visual inspection and console checks when available.
+5. Report the preview URL, changed files, and git status before committing or pushing.
+6. Only commit/push after the user explicitly approves.
 
 Use the agent's file tools (`write_file`, `patch`) to make changes, then commit:
 

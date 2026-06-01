@@ -46,6 +46,14 @@ Each template includes a **Hermes Implementation Notes** block at the top with:
 - CSS font-family stacks for primary and monospace
 - Reminders to use `write_file` for HTML creation and `browser_vision` for verification
 
+## Portfolio / Static Site Redesign Pitfalls
+
+When redesigning a static portfolio or landing page for local preview, make scroll animations progressive enhancement only:
+- Content must be visible by default in CSS. Do **not** set sections/cards to `opacity: 0` unless a JS-enabled class and visible fallback guarantee they render.
+- Browser screenshots, crawlers, accessibility snapshots, slow JS, and user previews can otherwise show huge blank sections even though the DOM contains text.
+- Recommended pattern: base `.reveal { opacity: 1; transform: none; }`; if animation is desired, add it only after JS initializes, and keep a no-JS / reduced-motion fallback visible.
+- Always verify with a local server + browser visual check before asking the user to approve.
+
 ## HTML Generation Pattern
 
 ```html
@@ -212,3 +220,30 @@ Match the design to the content:
 - **Premium / luxury:** Apple, BMW, Stripe, Superhuman, Revolut
 - **Data-dense / dashboards:** Sentry, Kraken, Cohere, ClickHouse
 - **Monospace / terminal aesthetic:** Ollama, OpenCode, x.ai, VoltAgent
+
+## Existing Site / Portfolio Refinement Workflow
+
+When improving an existing portfolio or personal site, do **not** default to a full redesign unless the user explicitly asks for one. Prefer a section-by-section refinement loop:
+
+1. Inspect the live/local site visually and structurally.
+2. Preserve the existing visual language if the user likes it; improve copy, hierarchy, spacing, and content packaging inside that style.
+3. Suggest changes for one section at a time, with clear options and exact replacement copy.
+4. Wait for approval/rejection before editing that section.
+5. Make the smallest approved diff first; avoid bundling unrelated redesign changes.
+6. Preview locally and verify visually before proposing commit/push.
+
+Pitfall: A polished wholesale redesign can still be wrong if the user prefers the original UI. For portfolios, the first pass should often be “same UI, sharper content” rather than “new design system.”
+
+### Section-by-section portfolio copy guardrails
+
+When the user asks to proceed to the “next section,” inspect that section and propose concrete copy/structure changes first; do not edit until they approve. Keep each iteration narrowly scoped to the section under discussion.
+
+For capability/skill-tag sections:
+- Preserve important existing tags unless the user explicitly removes them; do not drop core tools such as Python just because you are reordering categories.
+- Avoid near-duplicate tags in the same category. Pick the sharpest distinct labels (for example, prefer a concise AI set like `Agentic AI`, `RAG Products`, `LLM Workflows`, `Prompt Design`, `Evaluation Loops`, `LangGraph`, `Agent Harness`, `Multi-agent Workflows` rather than overlapping `AI Agents` + `AI Assistants` + `Agentic AI`).
+- If the user corrects tag wording/removals, apply exactly that small change, then verify visually and do not push/commit without approval.
+
+For Experience sections in PM portfolios:
+- Preserve the existing timeline/card UI unless a design change is requested.
+- Improve content around ownership, product surface, cross-functional execution, and measurable outcomes.
+- Write entries in a compact “owned/built → scope → impact” style rather than generic responsibility bullets.

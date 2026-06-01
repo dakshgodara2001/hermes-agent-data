@@ -18,15 +18,15 @@
       "schedule_display": "0 5 * * *",
       "repeat": {
         "times": null,
-        "completed": 15
+        "completed": 16
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T05:30:19.011354+05:30",
-      "next_run_at": "2026-06-02T05:00:00+05:30",
-      "last_run_at": "2026-05-31T05:00:25.772225+05:30",
+      "next_run_at": "2026-06-03T05:00:00+05:30",
+      "last_run_at": "2026-06-01T05:00:20.281135+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -57,15 +57,15 @@
       "schedule_display": "0 8 * * 1-5",
       "repeat": {
         "times": null,
-        "completed": 9
+        "completed": 10
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T06:29:30.435964+05:30",
-      "next_run_at": "2026-06-01T08:00:00+05:30",
-      "last_run_at": "2026-05-29T13:34:56.154471+05:30",
+      "next_run_at": "2026-06-02T08:00:00+05:30",
+      "last_run_at": "2026-06-01T08:01:56.674742+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -96,17 +96,17 @@
       "schedule_display": "5 9 * * 1-5",
       "repeat": {
         "times": null,
-        "completed": 10
+        "completed": 11
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T06:36:31.243693+05:30",
-      "next_run_at": "2026-06-01T09:05:00+05:30",
-      "last_run_at": "2026-05-29T09:05:10.914828+05:30",
-      "last_status": "error",
-      "last_error": "RuntimeError: 'NoneType' object is not iterable",
+      "next_run_at": "2026-06-02T09:05:00+05:30",
+      "last_run_at": "2026-06-01T09:05:14.870166+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -118,5 +118,5 @@
       "no_agent": true
     }
   ],
-  "updated_at": "2026-06-01T05:00:06.190623+05:30"
+  "updated_at": "2026-06-02T05:00:35.599288+05:30"
 }
