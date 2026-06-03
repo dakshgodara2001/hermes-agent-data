@@ -14,6 +14,9 @@ agent:
   api_max_retries: 3
   service_tier: ''
   tool_use_enforcement: auto
+  task_completion_guidance: true
+  environment_probe: true
+  environment_hint: ''
   gateway_timeout_warning: 900
   clarify_timeout: 600
   gateway_notify_interval: 600
@@ -76,7 +79,6 @@ terminal:
   singularity_image: docker://nikolaik/python-nodejs:python3.11-nodejs20
   modal_image: nikolaik/python-nodejs:python3.11-nodejs20
   daytona_image: nikolaik/python-nodejs:python3.11-nodejs20
-  vercel_runtime: node24
   container_cpu: 1
   container_memory: 5120
   container_disk: 51200
@@ -86,6 +88,7 @@ terminal:
   docker_extra_args: []
   docker_run_as_host_user: false
   persistent_shell: true
+  vercel_runtime: node24
   lifetime_seconds: 300
 web:
   backend: firecrawl
@@ -107,6 +110,8 @@ browser:
     user_id: ''
     session_key: ***REDACTED***
     adopt_existing_tab: false
+    rewrite_loopback_urls: false
+    loopback_host_alias: host.docker.internal
   cloud_provider: local
   use_gateway: false
 checkpoints:
@@ -141,6 +146,7 @@ compression:
   protect_last_n: 20
   hygiene_hard_message_limit: 400
   protect_first_n: 3
+  abort_on_summary_failure: false
 prompt_caching:
   cache_ttl: 5m
 openrouter:
@@ -181,14 +187,6 @@ auxiliary:
     api_key: ***REDACTED***
     timeout: 120
     extra_body: {}
-  session_search:
-    provider: auto
-    model: ''
-    base_url: ''
-    api_key: ***REDACTED***
-    timeout: 30
-    extra_body: {}
-    max_concurrency: 3
   skills_hub:
     provider: auto
     model: ''
@@ -224,6 +222,20 @@ auxiliary:
     api_key: ***REDACTED***
     timeout: 120
     extra_body: {}
+  kanban_decomposer:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ***REDACTED***
+    timeout: 180
+    extra_body: {}
+  profile_describer:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ***REDACTED***
+    timeout: 60
+    extra_body: {}
   curator:
     provider: auto
     model: ''
@@ -231,6 +243,14 @@ auxiliary:
     api_key: ***REDACTED***
     timeout: 600
     extra_body: {}
+  session_search:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ***REDACTED***
+    timeout: 30
+    extra_body: {}
+    max_concurrency: 3
   flush_memories:
     provider: auto
     model: ''
@@ -242,8 +262,14 @@ display:
   compact: false
   personality: kawaii
   resume_display: full
+  resume_exchanges: 10
+  resume_max_user_chars: 300
+  resume_max_assistant_chars: 200
+  resume_max_assistant_lines: 3
+  resume_skip_tool_only: true
   busy_input_mode: interrupt
   tui_auto_resume_recent: false
+  tui_agents_nudge: true
   bell_on_complete: false
   show_reasoning: false
   streaming: true
@@ -253,6 +279,7 @@ display:
   persistent_output_max_lines: 200
   inline_diffs: true
   file_mutation_verifier: true
+  turn_completion_explainer: true
   show_cost: false
   skin: default
   language: en
@@ -278,6 +305,10 @@ display:
 dashboard:
   theme: default
   show_token_analytics: false
+  oauth:
+    client_id: ''
+    portal_url: ''
+  public_url: ''
 privacy:
   redact_pii: false
 tts:
@@ -316,6 +347,11 @@ stt:
     model: whisper-1
   mistral:
     model: voxtral-mini-latest
+  elevenlabs:
+    model_id: scribe_v2
+    language_code: ''
+    tag_audio_events: false
+    diarize: false
 voice:
   record_key: ***REDACTED***
   max_recording_seconds: 120
@@ -342,6 +378,7 @@ delegation:
   provider: ''
   base_url: ''
   api_key: ***REDACTED***
+  api_mode: ''
   inherit_mcp_toolsets: true
   max_iterations: 50
   child_timeout_seconds: 600
@@ -386,10 +423,14 @@ discord:
   allowed_channels: ''
   auto_thread: true
   thread_require_mention: false
+  history_backfill: true
+  history_backfill_limit: 50
   reactions: true
   channel_prompts: {}
   dm_role_auth_guild: ''
   server_actions: ''
+  allow_any_attachment: false
+  max_attachment_bytes: 33554432
 whatsapp: {}
 telegram:
   reactions: false
@@ -435,10 +476,24 @@ kanban:
   dispatch_in_gateway: true
   dispatch_interval_seconds: 60
   failure_limit: 2
+  worker_log_rotate_bytes: 2097152
+  worker_log_backup_count: 1
+  orchestrator_profile: ''
+  default_assignee: ''
+  max_in_progress_per_profile: null
+  auto_decompose: true
+  auto_decompose_per_tick: 3
+  dispatch_stale_timeout_seconds: 14400
 code_execution:
   mode: project
   timeout: 300
   max_tool_calls: 50
+tools:
+  tool_search:
+    enabled: auto
+    threshold_pct: 10
+    search_default_limit: 5
+    max_search_limit: 20
 logging:
   level: INFO
   max_size_mb: 5
@@ -446,15 +501,21 @@ logging:
 model_catalog:
   enabled: true
   url: https://hermes-agent.nousresearch.com/docs/api/model-catalog.json
-  ttl_hours: 24
+  ttl_hours: 1
   providers: {}
 network:
   force_ipv4: false
+gateway:
+  strict: false
+  media_delivery_allow_dirs: []
+  trust_recent_files: true
+  trust_recent_files_seconds: 600
 sessions:
   auto_prune: false
   retention_days: 90
   vacuum_after_prune: true
   min_interval_hours: 24
+  write_json_snapshots: false
 onboarding:
   seen:
     busy_input_prompt: true
@@ -469,7 +530,23 @@ lsp:
   wait_timeout: 5.0
   install_strategy: auto
   servers: {}
-_config_version: 23
+x_search:
+  model: grok-4.20-reasoning
+  timeout_seconds: 180
+  retries: 2
+secrets:
+  bitwarden:
+    enabled: false
+    access_token_env: BWS_ACCESS_TOKEN
+    project_id: ''
+    cache_ttl_seconds: 300
+    override_existing: true
+    auto_install: true
+    server_url: ''
+paste_collapse_threshold: 5
+paste_collapse_threshold_fallback: 5
+paste_collapse_char_threshold: 2000
+_config_version: 25
 session_reset:
   mode: both
   idle_minutes: 1440
@@ -539,3 +616,25 @@ plugins:
   - google_meet
   - spotify
   disabled: []
+
+# ── Fallback Model ────────────────────────────────────────────────────
+# Automatic provider failover when primary is unavailable.
+# Uncomment and configure to enable. Triggers on rate limits (429),
+# overload (529), service errors (503), or connection failures.
+#
+# Supported providers:
+#   openrouter   (OPENROUTER_API_KEY)  — routes to any model
+#   openai-codex (OAuth — hermes auth) — OpenAI Codex
+#   nous         (OAuth — hermes auth) — Nous Portal
+#   zai          (ZAI_API_KEY)         — Z.AI / GLM
+#   kimi-coding  (KIMI_API_KEY)        — Kimi / Moonshot
+#   kimi-coding-cn (KIMI_CN_API_KEY)   — Kimi / Moonshot (China)
+#   minimax      (MINIMAX_API_KEY)     — MiniMax
+#   minimax-cn   (MINIMAX_CN_API_KEY)  — MiniMax (China)
+#   bedrock      (AWS IAM / boto3)     — AWS Bedrock (Converse API)
+#
+# For custom OpenAI-compatible endpoints, add base_url and key_env.
+#
+# fallback_model:
+#   provider: openrouter
+#   model: anthropic/claude-sonnet-4
