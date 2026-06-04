@@ -1,0 +1,122 @@
+{
+  "jobs": [
+    {
+      "id": "93f4f743729b",
+      "name": "Nightly GitHub Sync",
+      "prompt": "Run the nightly Hermes data sync to GitHub. Deliver the script output.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "run_nightly_github_sync.sh",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 5 * * *",
+        "display": "0 5 * * *"
+      },
+      "schedule_display": "0 5 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 19
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-14T05:30:19.011354+05:30",
+      "next_run_at": "2026-06-05T05:00:00+05:30",
+      "last_run_at": "2026-06-04T05:00:20.688783+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1205249019",
+        "chat_name": "Daksh",
+        "thread_id": null
+      },
+      "no_agent": true
+    },
+    {
+      "id": "151efc4b7b39",
+      "name": "Morning NSE/BSE Stock Scanner",
+      "prompt": "Run the Nifty 50 / Bank Nifty stock scanner silently (cache only, no report). Script writes ~/.hermes/cache/stock_scan_cache.json.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "run_nse_stock_scanner.sh",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * 1-5",
+        "display": "0 8 * * 1-5"
+      },
+      "schedule_display": "0 8 * * 1-5",
+      "repeat": {
+        "times": null,
+        "completed": 13
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-14T06:29:30.435964+05:30",
+      "next_run_at": "2026-06-05T08:00:00+05:30",
+      "last_run_at": "2026-06-04T08:01:11.272154+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1205249019",
+        "chat_name": "Daksh",
+        "thread_id": null
+      },
+      "no_agent": true
+    },
+    {
+      "id": "7c84d4de7a1d",
+      "name": "Pre-Market Pulse (9:05 AM)",
+      "prompt": "Run the Nifty 50 / Bank Nifty pre-market commentary report. Deliver the script output exactly as produced.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "run_premarket_pulse.sh",
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 9 * * 1-5",
+        "display": "5 9 * * 1-5"
+      },
+      "schedule_display": "5 9 * * 1-5",
+      "repeat": {
+        "times": null,
+        "completed": 14
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-14T06:36:31.243693+05:30",
+      "next_run_at": "2026-06-05T09:05:00+05:30",
+      "last_run_at": "2026-06-04T09:05:28.890528+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1205249019",
+        "chat_name": "Daksh",
+        "thread_id": null
+      },
+      "no_agent": true
+    }
+  ],
+  "updated_at": "2026-06-04T09:05:28.892228+05:30"
+}
