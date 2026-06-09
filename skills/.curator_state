@@ -3,7 +3,7 @@
   "last_run_at": "2026-06-04T18:15:15.923747+00:00",
   "last_run_duration_seconds": 533.064527,
   "last_run_summary": "auto: no changes; llm: Completed an umbrella-building consolidation pass across the obvious prefix/domain clusters.\n\nWhat changed:\n\n- Created 7 class-level umbrella skills:\n  - `apple-macos-automation`\n  - `coding-agent-delegation`\n  - `github-workflows`\n  - `llm…",
-  "last_run_summary_shown_at": "2026-05-28T17:16:14.303456+00:00",
+  "last_run_summary_shown_at": "2026-06-04T18:15:15.923747+00:00",
   "paused": false,
   "run_count": 3
 }
