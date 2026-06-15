@@ -120,12 +120,12 @@ Use pygount/cloc-like inspection when a high-level repo report is needed. Exclud
 
 This umbrella may contain namespaced files copied from absorbed skills:
 
-- `references/github-auth/*` — auth helpers and shell snippets.
-- `references/github-code-review/*` — review output templates and REST review details.
-- `references/github-pr-workflow/*` — CI troubleshooting and commit conventions.
-- `references/github-repo-management/*` — API cheatsheets and secret-safe backup/push recipes.
-- `templates/github-issues/*`, `templates/github-pr-workflow/*` — issue/PR body templates.
-- `scripts/github-auth/*` — reusable auth environment helpers.
+- `references/codebase-inspection/README.md` — LOC/language inspection workflow.
+- `references/github-auth/README.md` plus `references/github-auth/scripts/gh-env.sh` — auth helpers and shell snippets.
+- `references/github-code-review/README.md` plus `references/github-code-review/references/review-output-template.md` — review output templates and REST review details.
+- `references/github-issues/README.md` plus `references/github-issues/templates/*` — issue templates and triage recipes.
+- `references/github-pr-workflow/README.md` plus nested `references/` and `templates/` — CI troubleshooting, commit conventions, and PR bodies.
+- `references/github-repo-management/README.md` plus nested `references/` — API cheatsheets and secret-safe backup/push recipes.
 
 ## Common Pitfalls
 

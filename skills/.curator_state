@@ -1,9 +1,9 @@
 {
-  "last_report_path": "/Users/dakshgodara/.hermes/logs/curator/20260604-181515",
-  "last_run_at": "2026-06-04T18:15:15.923747+00:00",
-  "last_run_duration_seconds": 533.064527,
-  "last_run_summary": "auto: no changes; llm: Completed an umbrella-building consolidation pass across the obvious prefix/domain clusters.\n\nWhat changed:\n\n- Created 7 class-level umbrella skills:\n  - `apple-macos-automation`\n  - `coding-agent-delegation`\n  - `github-workflows`\n  - `llm…",
-  "last_run_summary_shown_at": "2026-06-04T18:15:15.923747+00:00",
+  "last_report_path": "/Users/dakshgodara/.hermes/logs/curator/20260612-101300",
+  "last_run_at": "2026-06-12T10:13:00.248054+00:00",
+  "last_run_duration_seconds": 250.999008,
+  "last_run_summary": "auto: no changes; llm: Completed an umbrella-building consolidation pass.\n\nSummary of work performed:\n\n- Removed active nested “absorbed package” skill roots that were still discoverable as standalone skills, while preserving their full package content under thei…\narchived 26 skill(s):\n  • apple-notes — pruned (stale)\n  • apple-reminders — pruned (stale)\n  • claude-code — pruned (stale)\n  • codebase-inspection — pruned (stale)\n  • codex — pruned (stale)\n  • evaluating-llms-harness — pruned (stale)\n  • findmy — pruned (stale)\n  • gif-search — pruned (stale)\n  • github-auth — pruned (stale)\n  • github-code-review — pruned (stale)\n  … and 16 more\nfull report: hermes curator status",
+  "last_run_summary_shown_at": "2026-06-12T10:13:00.248054+00:00",
   "paused": false,
-  "run_count": 3
+  "run_count": 4
 }

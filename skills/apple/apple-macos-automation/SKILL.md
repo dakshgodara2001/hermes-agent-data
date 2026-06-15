@@ -85,11 +85,11 @@ Use screenshot-driven operations for GUI tasks that do not expose a reliable CLI
 
 The detailed pre-consolidation packages are preserved under `references/absorbed-packages/` for recovery and session-specific command detail:
 
-- `references/absorbed-packages/apple-notes/`
-- `references/absorbed-packages/apple-reminders/`
-- `references/absorbed-packages/findmy/`
-- `references/absorbed-packages/imessage/`
-- `references/absorbed-packages/macos-computer-use/`
+- `references/apple-notes/README.md`
+- `references/apple-reminders/README.md`
+- `references/findmy/README.md`
+- `references/imessage/README.md`
+- `references/macos-computer-use/README.md`
 
 ## Common Pitfalls
 

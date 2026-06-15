@@ -94,9 +94,9 @@ For read-only reviews, pipe the exact diff or checkout the PR in a temporary wor
 
 Provider-specific historical packages are preserved under `references/absorbed-packages/`:
 
-- `references/absorbed-packages/claude-code/`
-- `references/absorbed-packages/codex/`
-- `references/absorbed-packages/opencode/`
+- `references/claude-code/README.md`
+- `references/codex/README.md`
+- `references/opencode/README.md`
 
 ## Common Pitfalls
 

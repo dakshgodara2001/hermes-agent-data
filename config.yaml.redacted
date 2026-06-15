@@ -7,6 +7,7 @@ fallback_providers: []
 credential_pool_strategies: {}
 toolsets:
 - hermes-cli
+max_concurrent_sessions: null
 agent:
   max_turns: 60
   gateway_timeout: 1800
@@ -147,6 +148,7 @@ compression:
   hygiene_hard_message_limit: 400
   protect_first_n: 3
   abort_on_summary_failure: false
+  codex_gpt55_autoraise: true
 prompt_caching:
   cache_ttl: 5m
 openrouter:
@@ -313,6 +315,12 @@ dashboard:
   oauth:
     client_id: ''
     portal_url: ''
+  basic_auth:
+    username: ''
+    password_hash: ''
+    password: ***REDACTED***
+    secret: ***REDACTED***
+    session_ttl_seconds: 0
   public_url: ''
 privacy:
   redact_pii: false
@@ -437,6 +445,20 @@ discord:
   server_actions: ''
   allow_any_attachment: false
   max_attachment_bytes: 33554432
+  voice_fx:
+    enabled: false
+    ambient_enabled: true
+    ambient_path: ''
+    ambient_gain: 0.18
+    duck_gain: 0.06
+    speech_gain: 1.0
+    ack_enabled: true
+    ack_phrases:
+    - Let me look into that.
+    - One moment.
+    - Checking on that now.
+    - Give me a sec.
+    - On it.
 whatsapp: {}
 telegram:
   reactions: false
@@ -534,9 +556,11 @@ onboarding:
     busy_input_prompt: true
     openclaw_residue_cleanup: true
     tool_progress_prompt: true
+  profile_build: ask
 updates:
   pre_update_backup: false
   backup_keep: 5
+  non_interactive_local_changes: stash
 lsp:
   enabled: true
   wait_mode: document
@@ -559,7 +583,7 @@ secrets:
 paste_collapse_threshold: 5
 paste_collapse_threshold_fallback: 5
 paste_collapse_char_threshold: 2000
-_config_version: 26
+_config_version: 28
 session_reset:
   mode: both
   idle_minutes: 1440

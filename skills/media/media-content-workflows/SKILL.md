@@ -56,7 +56,7 @@ Use spectrogram/feature extraction for analysis or visualization. Record sample 
 
 ## Support Files
 
-Namespaced copied files may live under `references/youtube-content/`, `scripts/youtube-content/`, and other per-workflow subdirectories.
+Namespaced copied files live under `references/<workflow>/` with the former skill body preserved as `README.md`; for example `references/youtube-content/README.md`, `references/youtube-content/references/output-formats.md`, and `references/youtube-content/scripts/fetch_transcript.py`.
 
 ## Common Pitfalls
 

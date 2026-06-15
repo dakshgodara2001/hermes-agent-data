@@ -68,11 +68,12 @@ A Hermes worker may spawn Codex only as an isolated input lane. Required rules:
 
 ## Absorbed Package References
 
-Detailed pre-consolidation packages are preserved under `references/absorbed-packages/`:
+Detailed pre-consolidation packages are preserved as support references with former skill bodies renamed to `README.md`:
 
-- `references/absorbed-packages/kanban-orchestrator/`
-- `references/absorbed-packages/kanban-worker/`
-- `references/absorbed-packages/kanban-codex-lane/`
+- `references/kanban-orchestrator/README.md`
+- `references/kanban-worker/README.md`
+- `references/kanban-codex-lane/README.md`
+- `references/kanban-codex-lane/templates/pmb-codex-lane-prompt.md`
 
 ## Common Pitfalls
 

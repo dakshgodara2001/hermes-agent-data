@@ -43,7 +43,7 @@ Use W&B for experiment tracking, sweeps, model artifacts, tables, and dashboards
 
 ## Support Files
 
-Namespaced files from absorbed skills may live under `references/lm-evaluation-harness/` and `references/weights-and-biases/`.
+Namespaced files from absorbed skills live under `references/lm-evaluation-harness/` and `references/weights-and-biases/`; the former skill bodies are preserved as `README.md` and their original support files remain below each directory.
 
 ## Common Pitfalls
 

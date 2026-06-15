@@ -58,7 +58,7 @@ Use only for explicit model-surgery/research tasks. Preserve original checkpoint
 
 ## Support Files
 
-Namespaced reference files from absorbed engine-specific skills can live under `references/llama-cpp/`, `references/vllm/`, `references/obliteratus/`, and `templates/obliteratus/`.
+Namespaced reference files from absorbed engine-specific skills live under `references/llama-cpp/`, `references/vllm/`, and `references/obliteratus/`. The former skill bodies are preserved as `README.md`; original support subdirectories (for example `references/obliteratus/templates/*.yaml`) are re-homed under each engine's reference directory.
 
 ## Common Pitfalls
 
