@@ -18,18 +18,18 @@
       "schedule_display": "0 5 * * *",
       "repeat": {
         "times": null,
-        "completed": 27
+        "completed": 28
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T05:30:19.011354+05:30",
-      "next_run_at": "2026-06-18T05:00:00+05:30",
-      "last_run_at": "2026-06-16T05:00:53.323731+05:30",
+      "next_run_at": "2026-06-20T05:00:00+05:30",
+      "last_run_at": "2026-06-17T05:01:33.876966+05:30",
       "last_status": "ok",
       "last_error": null,
-      "last_delivery_error": null,
+      "last_delivery_error": "delivery error: Telegram send failed: httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known",
       "deliver": "origin",
       "origin": {
         "platform": "telegram",
@@ -57,15 +57,15 @@
       "schedule_display": "0 8 * * 1-5",
       "repeat": {
         "times": null,
-        "completed": 19
+        "completed": 20
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T06:29:30.435964+05:30",
-      "next_run_at": "2026-06-17T08:00:00+05:30",
-      "last_run_at": "2026-06-16T08:00:51.903522+05:30",
+      "next_run_at": "2026-06-19T08:00:00+05:30",
+      "last_run_at": "2026-06-17T08:00:56.149559+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -96,18 +96,18 @@
       "schedule_display": "5 9 * * 1-5",
       "repeat": {
         "times": null,
-        "completed": 19
+        "completed": 20
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T06:36:31.243693+05:30",
-      "next_run_at": "2026-06-17T09:05:00+05:30",
-      "last_run_at": "2026-06-16T09:05:23.067341+05:30",
+      "next_run_at": "2026-06-19T09:05:00+05:30",
+      "last_run_at": "2026-06-17T09:06:02.124191+05:30",
       "last_status": "ok",
       "last_error": null,
-      "last_delivery_error": null,
+      "last_delivery_error": "delivery error: Telegram send failed: httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known",
       "deliver": "origin",
       "origin": {
         "platform": "telegram",
@@ -118,5 +118,5 @@
       "no_agent": true
     }
   ],
-  "updated_at": "2026-06-17T05:00:52.754786+05:30"
+  "updated_at": "2026-06-19T05:00:04.022094+05:30"
 }
