@@ -18,15 +18,15 @@
       "schedule_display": "0 5 * * *",
       "repeat": {
         "times": null,
-        "completed": 28
+        "completed": 29
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T05:30:19.011354+05:30",
-      "next_run_at": "2026-06-20T05:00:00+05:30",
-      "last_run_at": "2026-06-17T05:01:33.876966+05:30",
+      "next_run_at": "2026-06-21T05:00:00+05:30",
+      "last_run_at": "2026-06-19T05:00:11.042724+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": "delivery error: Telegram send failed: httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known",
@@ -57,15 +57,15 @@
       "schedule_display": "0 8 * * 1-5",
       "repeat": {
         "times": null,
-        "completed": 20
+        "completed": 21
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T06:29:30.435964+05:30",
-      "next_run_at": "2026-06-19T08:00:00+05:30",
-      "last_run_at": "2026-06-17T08:00:56.149559+05:30",
+      "next_run_at": "2026-06-22T08:00:00+05:30",
+      "last_run_at": "2026-06-19T08:01:06.159656+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -96,15 +96,15 @@
       "schedule_display": "5 9 * * 1-5",
       "repeat": {
         "times": null,
-        "completed": 20
+        "completed": 21
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T06:36:31.243693+05:30",
-      "next_run_at": "2026-06-19T09:05:00+05:30",
-      "last_run_at": "2026-06-17T09:06:02.124191+05:30",
+      "next_run_at": "2026-06-22T09:05:00+05:30",
+      "last_run_at": "2026-06-19T09:05:40.491132+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": "delivery error: Telegram send failed: httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known",
@@ -118,5 +118,5 @@
       "no_agent": true
     }
   ],
-  "updated_at": "2026-06-19T05:00:04.022094+05:30"
+  "updated_at": "2026-06-20T05:00:09.937936+05:30"
 }
