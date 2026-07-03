@@ -1,9 +1,9 @@
 {
-  "last_report_path": "/Users/dakshgodara/.hermes/logs/curator/20260619-105032",
-  "last_run_at": "2026-06-19T10:50:32.259422+00:00",
-  "last_run_duration_seconds": 17.955677,
-  "last_run_summary": "auto: no changes; llm: API call failed after 3 retries: HTTP 429: The usage limit has been reached",
-  "last_run_summary_shown_at": "2026-06-12T10:13:00.248054+00:00",
+  "last_report_path": "/Users/dakshgodara/.hermes/logs/curator/20260628-030457",
+  "last_run_at": "2026-06-28T03:04:57.958343+00:00",
+  "last_run_duration_seconds": 9.967976,
+  "last_run_summary": "auto: 2 marked stale; llm: API call failed after 3 retries: Connection error.",
+  "last_run_summary_shown_at": "2026-06-19T10:50:32.259422+00:00",
   "paused": false,
-  "run_count": 5
+  "run_count": 6
 }
