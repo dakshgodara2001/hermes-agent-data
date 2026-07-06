@@ -742,6 +742,14 @@ Config: `curator.*` (`enabled`, `interval_hours`, `min_idle_hours`,
 `stale_after_days`, `archive_after_days`, `backup.*`).
 User docs: https://hermes-agent.nousresearch.com/docs/user-guide/features/curator
 
+### Skills, Cron, and User-Facing Hermes Feature Operations
+
+Use this same Hermes umbrella instead of separate micro-skills for Hermes skill authoring, cron operations, and petdex-style feature configuration:
+
+- **Skill authoring:** create or edit class-level `SKILL.md` packages with frontmatter, concise trigger descriptions, actionable process steps, and bulky details in `references/`, `templates/`, or `scripts/`. Validate frontmatter and avoid one-session-one-skill sediment.
+- **Cron operations:** inspect scheduled jobs through the `cronjob` tool or `hermes cron`; distinguish scheduler, provider/model, script, workdir, and delivery failures; verify a manual run before declaring a job fixed.
+- **Petdex and other Hermes user features:** prefer documented `hermes ...` CLI/config paths, verify installed assets or config changes, and keep feature-specific quirks as a subsection/reference under this umbrella rather than a standalone skill.
+
 ### Kanban (multi-agent work queue)
 
 Durable SQLite board for multi-profile / multi-worker collaboration.
