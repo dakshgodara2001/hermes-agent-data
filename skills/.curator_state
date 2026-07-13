@@ -3,7 +3,7 @@
   "last_run_at": "2026-07-06T13:06:21.518832+00:00",
   "last_run_duration_seconds": 447.943129,
   "last_run_summary": "auto: 45 marked stale; llm: Consolidation pass completed.\n\nSummary:\n- Created six new class-level umbrella skills:\n  - `creative-visual-artifacts`\n  - `creative-media-production`\n  - `software-development-lifecycle`\n  - `document-productivity-workflows`\n  - `service-a…\narchived 45 skill(s):\n  • hermes-agent-skill-authoring → hermes-agent\n  • hermes-cron-operations → hermes-agent\n  • petdex → hermes-agent\n  • airtable — pruned (stale)\n  • architecture-diagram — pruned (stale)\n  • arxiv — pruned (stale)\n  • ascii-art — pruned (stale)\n  • ascii-video — pruned (stale)\n  • baoyu-infographic — pruned (stale)\n  • blogwatcher — pruned (stale)\n  … and 35 more\nfull report: hermes curator status\nkeep an umbrella stable: hermes curator pin hermes-agent",
-  "last_run_summary_shown_at": "2026-06-19T10:50:32.259422+00:00",
+  "last_run_summary_shown_at": "2026-07-06T13:06:21.518832+00:00",
   "paused": false,
   "run_count": 7
 }
