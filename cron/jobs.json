@@ -18,15 +18,15 @@
       "schedule_display": "0 5 * * *",
       "repeat": {
         "times": null,
-        "completed": 40
+        "completed": 41
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T05:30:19.011354+05:30",
-      "next_run_at": "2026-07-15T05:00:00+05:30",
-      "last_run_at": "2026-07-13T12:51:38.736822+05:30",
+      "next_run_at": "2026-07-16T05:00:00+05:30",
+      "last_run_at": "2026-07-14T15:38:34.803699+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -41,72 +41,38 @@
       "fire_claim": null
     },
     {
-      "id": "151efc4b7b39",
-      "name": "Morning NSE/BSE Stock Scanner",
-      "prompt": "Run the Nifty 50 / Bank Nifty stock scanner silently (cache only, no report). Script writes ~/.hermes/cache/stock_scan_cache.json.",
-      "skills": [],
-      "skill": null,
+      "id": "357fca1e6376",
+      "name": "Daily Nimaraa Content Intelligence",
+      "prompt": "You are running a daily content-intelligence brief for Daksh's AI health-agent app, Nimaraa. Website: https://nimaraa.ai\n\nGoal: Every day, inspect what is currently working in the AI health / health assistant / wellness AI / personal health agent domain across these platforms: LinkedIn, X/Twitter, Reddit, Instagram, Substack, and Facebook. Then tell Daksh how Nimaraa can capitalize on it with content ideas.\n\nImportant constraints:\n- Do NOT create, edit, or remove cron jobs from this run.\n- Use live web sources/searches; do not rely on memory. If a platform is inaccessible or login-gated, say so and use public search results/web-indexed posts as a fallback.\n- Start by briefly checking Nimaraa's website/landing page so recommendations fit the product positioning.\n- Focus on actionable opportunities, not a generic strategy document.\n- Prefer fresh signals from the last 24\u201372 hours when available; if not available, use recent visible examples and label freshness.\n- Keep the report concise and platform-wise.\n\nDaily report format:\n## Nimaraa Daily Content Intelligence \u2014 <date>\n\n### 1) Today's pattern summary\n- 3\u20135 bullets on what seems to be working right now in AI health / health agent content.\n\n### 2) Platform-wise opportunities\nFor each platform \u2014 LinkedIn, X/Twitter, Reddit, Instagram, Substack, Facebook \u2014 include:\n- What is working / observed signal\n- Why it matters for Nimaraa\n- 2\u20133 concrete post/content ideas Daksh can make today\n- Suggested format/hook\n- Source links or search evidence\n\n### 3) Best 5 content bets for today\nRank the top 5 posts to create today, with hook + angle + platform.\n\n### 4) Cautions\nMention any compliance/trust caveats for AI health content: avoid medical claims, frame as education/support, encourage professional medical advice where relevant.\n\nDeliver only the final report to Telegram.",
+      "skills": [
+        "research-monitoring-intelligence"
+      ],
+      "skill": "research-monitoring-intelligence",
       "model": null,
       "provider": null,
+      "provider_snapshot": "openai-codex",
+      "model_snapshot": "gpt-5.5",
       "base_url": null,
-      "script": "run_nse_stock_scanner.sh",
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
       "schedule": {
         "kind": "cron",
-        "expr": "0 8 * * 1-5",
-        "display": "0 8 * * 1-5"
+        "expr": "30 9 * * *",
+        "display": "30 9 * * *"
       },
-      "schedule_display": "0 8 * * 1-5",
+      "schedule_display": "30 9 * * *",
       "repeat": {
         "times": null,
-        "completed": 28
+        "completed": 1
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
-      "created_at": "2026-05-14T06:29:30.435964+05:30",
-      "next_run_at": "2026-07-15T08:00:00+05:30",
-      "last_run_at": "2026-07-13T12:52:10.371258+05:30",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "local",
-      "origin": {
-        "platform": "telegram",
-        "chat_id": "1205249019",
-        "chat_name": "Daksh",
-        "thread_id": null
-      },
-      "no_agent": true,
-      "fire_claim": null
-    },
-    {
-      "id": "7c84d4de7a1d",
-      "name": "Pre-Market Pulse (9:05 AM)",
-      "prompt": "Run the Nifty 50 / Bank Nifty pre-market commentary report. Deliver the script output exactly as produced.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "run_premarket_pulse.sh",
-      "schedule": {
-        "kind": "cron",
-        "expr": "5 9 * * 1-5",
-        "display": "5 9 * * 1-5"
-      },
-      "schedule_display": "5 9 * * 1-5",
-      "repeat": {
-        "times": null,
-        "completed": 29
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-05-14T06:36:31.243693+05:30",
-      "next_run_at": "2026-07-15T09:05:00+05:30",
-      "last_run_at": "2026-07-13T12:51:38.924697+05:30",
+      "created_at": "2026-07-15T03:02:13.432297+05:30",
+      "next_run_at": "2026-07-15T09:30:00+05:30",
+      "last_run_at": "2026-07-15T03:04:00.558276+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -115,11 +81,15 @@
         "platform": "telegram",
         "chat_id": "1205249019",
         "chat_name": "Daksh",
-        "thread_id": null
+        "thread_id": null,
+        "user_id": "1205249019"
       },
-      "no_agent": true,
+      "enabled_toolsets": [
+        "web"
+      ],
+      "workdir": null,
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-14T15:38:23.302883+05:30"
+  "updated_at": "2026-07-15T05:00:17.687937+05:30"
 }

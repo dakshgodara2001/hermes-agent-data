@@ -1,9 +1,9 @@
 {
-  "last_report_path": "/Users/dakshgodara/.hermes/logs/curator/20260706-130621",
-  "last_run_at": "2026-07-06T13:06:21.518832+00:00",
-  "last_run_duration_seconds": 447.943129,
-  "last_run_summary": "auto: 45 marked stale; llm: Consolidation pass completed.\n\nSummary:\n- Created six new class-level umbrella skills:\n  - `creative-visual-artifacts`\n  - `creative-media-production`\n  - `software-development-lifecycle`\n  - `document-productivity-workflows`\n  - `service-a…\narchived 45 skill(s):\n  • hermes-agent-skill-authoring → hermes-agent\n  • hermes-cron-operations → hermes-agent\n  • petdex → hermes-agent\n  • airtable — pruned (stale)\n  • architecture-diagram — pruned (stale)\n  • arxiv — pruned (stale)\n  • ascii-art — pruned (stale)\n  • ascii-video — pruned (stale)\n  • baoyu-infographic — pruned (stale)\n  • blogwatcher — pruned (stale)\n  … and 35 more\nfull report: hermes curator status\nkeep an umbrella stable: hermes curator pin hermes-agent",
+  "last_report_path": "/Users/dakshgodara/.hermes/logs/curator/20260714-214553",
+  "last_run_at": "2026-07-14T21:45:53.550891+00:00",
+  "last_run_duration_seconds": 1.432526,
+  "last_run_summary": "auto: no changes; llm: skipped (consolidation off)",
   "last_run_summary_shown_at": "2026-07-06T13:06:21.518832+00:00",
   "paused": false,
-  "run_count": 7
+  "run_count": 8
 }

@@ -316,13 +316,13 @@
     "created_at": "2026-06-04T18:15:18.922376+00:00",
     "created_by": null,
     "last_patched_at": "2026-07-06T13:09:37.065167+00:00",
-    "last_used_at": "2026-06-15T12:02:04.303114+00:00",
-    "last_viewed_at": "2026-06-15T12:02:04.292431+00:00",
+    "last_used_at": "2026-07-14T21:20:08.403777+00:00",
+    "last_viewed_at": "2026-07-14T21:20:08.398750+00:00",
     "patch_count": 1,
     "pinned": false,
     "state": "active",
-    "use_count": 1,
-    "view_count": 1
+    "use_count": 2,
+    "view_count": 2
   },
   "huggingface-hub": {
     "archived_at": null,
@@ -471,14 +471,14 @@
     "archived_at": null,
     "created_at": "2026-06-12T10:13:21.267023+00:00",
     "created_by": null,
-    "last_patched_at": "2026-06-12T10:14:37.687831+00:00",
-    "last_used_at": "2026-06-12T10:13:21.277836+00:00",
-    "last_viewed_at": "2026-06-12T10:13:21.267044+00:00",
-    "patch_count": 1,
+    "last_patched_at": "2026-07-14T21:31:01.778746+00:00",
+    "last_used_at": "2026-07-14T21:30:25.573324+00:00",
+    "last_viewed_at": "2026-07-14T21:30:25.567175+00:00",
+    "patch_count": 6,
     "pinned": false,
     "state": "active",
-    "use_count": 1,
-    "view_count": 1
+    "use_count": 2,
+    "view_count": 2
   },
   "ml-evaluation-experiment-tracking": {
     "archived_at": null,
@@ -557,6 +557,19 @@
     "state": "active",
     "use_count": 0,
     "view_count": 0
+  },
+  "research-monitoring-intelligence": {
+    "archived_at": null,
+    "created_at": "2026-07-14T21:31:58.244374+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-07-14T21:32:16.382735+00:00",
+    "last_viewed_at": "2026-07-14T21:31:58.244394+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 2,
+    "view_count": 1
   },
   "segment-anything-model": {
     "archived_at": null,
