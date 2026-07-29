@@ -18,15 +18,15 @@
       "schedule_display": "0 5 * * *",
       "repeat": {
         "times": null,
-        "completed": 50
+        "completed": 51
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T05:30:19.011354+05:30",
-      "next_run_at": "2026-07-30T05:00:00+05:30",
-      "last_run_at": "2026-07-28T19:54:11.082133+05:30",
+      "next_run_at": "2026-07-31T05:00:00+05:30",
+      "last_run_at": "2026-07-29T11:45:31.694289+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -43,7 +43,7 @@
     {
       "id": "357fca1e6376",
       "name": "Daily Nimaraa Content Intelligence",
-      "prompt": "You are running a daily content-intelligence brief for Daksh's AI health-agent app, Nimaraa. Website: https://nimaraa.ai\n\nGoal: Every day, inspect what is currently working in the AI health / health assistant / wellness AI / personal health agent domain across these platforms: LinkedIn, X/Twitter, Reddit, Instagram, Substack, and Facebook. Then tell Daksh how Nimaraa can capitalize on it with content ideas.\n\nImportant constraints:\n- Do NOT create, edit, or remove cron jobs from this run.\n- Use live web sources/searches; do not rely on memory. If a platform is inaccessible or login-gated, say so and use public search results/web-indexed posts as a fallback.\n- Start by briefly checking Nimaraa's website/landing page so recommendations fit the product positioning.\n- Focus on actionable opportunities, not a generic strategy document.\n- Prefer fresh signals from the last 24\u201372 hours when available; if not available, use recent visible examples and label freshness.\n- Keep the report concise and platform-wise.\n\nDaily report format:\n## Nimaraa Daily Content Intelligence \u2014 <date>\n\n### 1) Today's pattern summary\n- 3\u20135 bullets on what seems to be working right now in AI health / health agent content.\n\n### 2) Platform-wise opportunities\nFor each platform \u2014 LinkedIn, X/Twitter, Reddit, Instagram, Substack, Facebook \u2014 include:\n- What is working / observed signal\n- Why it matters for Nimaraa\n- 2\u20133 concrete post/content ideas Daksh can make today\n- Suggested format/hook\n- Source links or search evidence\n\n### 3) Best 5 content bets for today\nRank the top 5 posts to create today, with hook + angle + platform.\n\n### 4) Cautions\nMention any compliance/trust caveats for AI health content: avoid medical claims, frame as education/support, encourage professional medical advice where relevant.\n\nDeliver only the final report to Telegram.",
+      "prompt": "You are running a daily content-intelligence brief for Daksh's AI health-agent app, Nimaraa. Website: https://nimaraa.ai\n\nGoal: Every day, inspect what is currently working in the AI health / health assistant / wellness AI / personal health agent domain across these platforms: LinkedIn, X/Twitter, Reddit, Instagram, Substack, and Facebook. Then decide the five best content ideas Nimaraa should post today.\n\nImportant constraints:\n- Do NOT create, edit, or remove cron jobs from this run.\n- Use live web sources/searches; do not rely on memory. If a platform is inaccessible or login-gated, use public search results/web-indexed posts as fallback.\n- Briefly check Nimaraa's website/landing page so ideas fit the product.\n- Do NOT send links or long research notes. Daksh does not want source links in the daily message.\n- You do the research and decision-making silently, then deliver only the selected top ideas.\n- Keep it as ONE concise message.\n- Include exactly five ideas for the day.\n- Each idea must have a title plus a 2\u20133 line description max.\n- Mention platform/format only if useful, inside the short description.\n- Avoid medical claims; frame AI-health content as education/support and remind users to seek professional medical advice when relevant.\n\nOutput format:\n## Nimaraa \u2014 Top 5 Content Ideas for Today\n\n1. **<Title>**\n<2\u20133 line max description>\n\n2. **<Title>**\n<2\u20133 line max description>\n\n3. **<Title>**\n<2\u20133 line max description>\n\n4. **<Title>**\n<2\u20133 line max description>\n\n5. **<Title>**\n<2\u20133 line max description>",
       "skills": [
         "research-monitoring-intelligence"
       ],
@@ -58,24 +58,24 @@
       "context_from": null,
       "schedule": {
         "kind": "cron",
-        "expr": "30 9 * * *",
-        "display": "30 9 * * *"
+        "expr": "0 20 * * *",
+        "display": "0 20 * * *"
       },
-      "schedule_display": "30 9 * * *",
+      "schedule_display": "0 20 * * *",
       "repeat": {
         "times": null,
-        "completed": 8
+        "completed": 9
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-15T03:02:13.432297+05:30",
-      "next_run_at": "2026-07-30T09:30:00+05:30",
-      "last_run_at": "2026-07-28T17:30:01.791954+05:30",
+      "next_run_at": "2026-07-30T20:00:00+05:30",
+      "last_run_at": "2026-07-29T14:12:35.493128+05:30",
       "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'Daily Nimaraa Content Intelligence' idle for 108091s (limit 600s) \u2014 last activity: API error recovery (attempt 3/3)",
-      "last_delivery_error": "live adapter send failed: send_path_degraded; live adapter delivery to telegram:1205249019 failed: send_path_degraded; delivery error: Telegram send failed: httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known",
+      "last_error": "TimeoutError: Cron job 'Daily Nimaraa Content Intelligence' idle for 1576s (limit 600s) \u2014 last activity: concurrent tools running (5s, 3 remaining: web_extract, web_extract, web_extract)",
+      "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
         "platform": "telegram",
@@ -91,5 +91,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-29T11:45:21.904561+05:30"
+  "updated_at": "2026-07-30T05:00:04.565092+05:30"
 }

@@ -42,12 +42,17 @@ This umbrella covers evidence-gathering workflows over research and market infor
 4. **Synthesize.** Provide citations/links and note uncertainty or stale data.
 5. **Automate only if asked.** For recurring scans, create a self-contained cron prompt/script and verify a manual run first.
 
+## Recurring Content-Intelligence Briefs
+
+When a recurring monitoring job is for daily content ideas, prefer a decision-ready output instead of a research dump when the user asks for it. For Daksh's Nimaraa daily content intelligence specifically, the expected report is one concise message with exactly five top content ideas for the day; each idea has a title and a 2–3 line max description, with no source links or long platform-by-platform notes. Do the live research silently, then deliver only the selected ideas.
+
 ## Common Pitfalls
 
 - Do not summarize current markets or feeds from memory; fetch live data.
 - Do not bury source-specific commands in separate micro-skills; store bulky endpoint notes under `references/`.
 - Do not overfit a market scanner to one session; keep configurable symbols, horizons, and thresholds.
-- Do not omit source timestamps for time-sensitive intelligence.
+- Do not omit source timestamps for time-sensitive intelligence unless the user explicitly requests a no-links/no-research-dump executive format.
+- For user-facing content-monitoring crons, do not default to verbose source-heavy reports when the user wants a compact action list; encode their preferred daily format in the cron prompt and the governing skill.
 
 ## Verification Checklist
 

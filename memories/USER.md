@@ -1,0 +1,1 @@
+Daksh wants the Nimaraa daily content-intelligence cron as one concise message with exactly five top ideas for the day; each idea should have a title and 2–3 line max description, with no source links or long research notes.
