@@ -18,15 +18,15 @@
       "schedule_display": "0 5 * * *",
       "repeat": {
         "times": null,
-        "completed": 55
+        "completed": 56
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T05:30:19.011354+05:30",
-      "next_run_at": "2026-08-08T05:00:00+05:30",
-      "last_run_at": "2026-08-07T01:33:24.652703+05:30",
+      "next_run_at": "2026-08-09T05:00:00+05:30",
+      "last_run_at": "2026-08-07T05:34:18.682358+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -64,17 +64,17 @@
       "schedule_display": "0 20 * * *",
       "repeat": {
         "times": null,
-        "completed": 13
+        "completed": 14
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-15T03:02:13.432297+05:30",
-      "next_run_at": "2026-08-07T20:00:00+05:30",
-      "last_run_at": "2026-08-07T05:33:45.022012+05:30",
-      "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'Daily Nimaraa Content Intelligence' idle for 7204s (limit 600s) \u2014 last activity: concurrent tools running (5s, 1 remaining: web_extract)",
+      "next_run_at": "2026-08-08T20:00:00+05:30",
+      "last_run_at": "2026-08-07T20:01:03.104305+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -91,5 +91,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-08-07T05:34:11.183565+05:30"
+  "updated_at": "2026-08-08T05:00:30.613299+05:30"
 }
