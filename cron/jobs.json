@@ -18,17 +18,17 @@
       "schedule_display": "0 5 * * *",
       "repeat": {
         "times": null,
-        "completed": 57
+        "completed": 58
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T05:30:19.011354+05:30",
-      "next_run_at": "2026-08-10T05:00:00+05:30",
-      "last_run_at": "2026-08-08T05:00:40.055929+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-08-13T05:00:00+05:30",
+      "last_run_at": "2026-08-09T14:12:57.891690+05:30",
+      "last_status": "error",
+      "last_error": "Script exited with code 128\nstderr:\nssh: Could not resolve hostname github.com: nodename nor servname provided, or not known\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.\nstdout:\n=== Hermes Nightly GitHub Sync: 2026-08-09 14:12 IST ===\nSyncing skills...\nSyncing cron jobs...\nSyncing memories...\nSyncing config (redacted)...\nSyncing SOUL.md...\nCommitting and pushing...\n[main 4696a42] Nightly sync: 2026-08-09 14:12 IST\n 3 files changed, 10 insertions(+), 10 deletions(-)",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -71,7 +71,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-15T03:02:13.432297+05:30",
-      "next_run_at": "2026-08-09T20:00:00+05:30",
+      "next_run_at": "2026-08-12T20:00:00+05:30",
       "last_run_at": "2026-08-08T20:01:22.204402+05:30",
       "last_status": "ok",
       "last_error": null,
@@ -91,5 +91,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-08-09T14:12:53.652927+05:30"
+  "updated_at": "2026-08-12T08:12:01.861119+05:30"
 }
