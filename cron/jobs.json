@@ -18,17 +18,17 @@
       "schedule_display": "0 5 * * *",
       "repeat": {
         "times": null,
-        "completed": 59
+        "completed": 60
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T05:30:19.011354+05:30",
-      "next_run_at": "2026-08-14T05:00:00+05:30",
-      "last_run_at": "2026-08-12T08:12:02.405852+05:30",
+      "next_run_at": "2026-08-15T05:00:00+05:30",
+      "last_run_at": "2026-08-13T21:51:18.636523+05:30",
       "last_status": "error",
-      "last_error": "Script exited with code 128\nstderr:\nssh: Could not resolve hostname github.com: nodename nor servname provided, or not known\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.\nstdout:\n=== Hermes Nightly GitHub Sync: 2026-08-12 08:12 IST ===\nSyncing skills...\nSyncing cron jobs...\nSyncing memories...\nSyncing config (redacted)...\nSyncing SOUL.md...\nCommitting and pushing...\n[main 5b9daae] Nightly sync: 2026-08-12 08:12 IST\n 2 files changed, 8 insertions(+), 8 deletions(-)",
+      "last_error": "Script exited with code 128\nstderr:\nssh: Could not resolve hostname github.com: nodename nor servname provided, or not known\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.\nstdout:\n=== Hermes Nightly GitHub Sync: 2026-08-13 21:51 IST ===\nSyncing skills...\nSyncing cron jobs...\nSyncing memories...\nSyncing config (redacted)...\nSyncing SOUL.md...\nCommitting and pushing...\n[main fa996d9] Nightly sync: 2026-08-13 21:51 IST\n 3 files changed, 15 insertions(+), 15 deletions(-)",
       "last_delivery_error": "live adapter send failed: send_path_degraded; live adapter delivery to telegram:1205249019 failed: send_path_degraded; delivery error: Telegram send failed: httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known",
       "deliver": "origin",
       "origin": {
@@ -91,5 +91,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-08-13T21:51:17.389109+05:30"
+  "updated_at": "2026-08-14T05:56:02.937814+05:30"
 }
