@@ -18,18 +18,18 @@
       "schedule_display": "0 5 * * *",
       "repeat": {
         "times": null,
-        "completed": 68
+        "completed": 69
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-14T05:30:19.011354+05:30",
-      "next_run_at": "2026-08-28T05:00:00+05:30",
-      "last_run_at": "2026-08-24T05:15:53.757562+05:30",
-      "last_status": "error",
-      "last_error": "Script exited with code 128\nstderr:\nssh: Could not resolve hostname github.com: nodename nor servname provided, or not known\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.\nstdout:\n=== Hermes Nightly GitHub Sync: 2026-08-24 05:15 IST ===\nSyncing skills...\nSyncing cron jobs...\nSyncing memories...\nSyncing config (redacted)...\nSyncing SOUL.md...\nCommitting and pushing...\n[main 4a6ba29] Nightly sync: 2026-08-24 05:15 IST\n 3 files changed, 11 insertions(+), 11 deletions(-)",
-      "last_delivery_error": "live adapter send failed: send_path_degraded; live adapter delivery to telegram:1205249019 failed: send_path_degraded; delivery error: Telegram send failed: httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known",
+      "next_run_at": "2026-08-29T05:00:00+05:30",
+      "last_run_at": "2026-08-28T04:26:30.204201+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
         "platform": "telegram",
@@ -64,7 +64,7 @@
       "schedule_display": "0 20 * * *",
       "repeat": {
         "times": null,
-        "completed": 24
+        "completed": 25
       },
       "enabled": true,
       "state": "scheduled",
@@ -72,9 +72,9 @@
       "paused_reason": null,
       "created_at": "2026-07-15T03:02:13.432297+05:30",
       "next_run_at": "2026-08-28T20:00:00+05:30",
-      "last_run_at": "2026-08-24T05:16:16.734757+05:30",
+      "last_run_at": "2026-08-28T06:26:32.933243+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: Connection error.",
+      "last_error": "TimeoutError: Cron job 'Daily Nimaraa Content Intelligence' idle for 7197s (limit 600s) \u2014 last activity: concurrent tools running (5s, 1 remaining: web_extract)",
       "last_delivery_error": "live adapter send failed: send_path_degraded; live adapter delivery to telegram:1205249019 failed: send_path_degraded; delivery error: Telegram send failed: httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known",
       "deliver": "origin",
       "origin": {
@@ -91,5 +91,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-08-28T04:26:20.730539+05:30"
+  "updated_at": "2026-08-28T16:59:35.756972+05:30"
 }
